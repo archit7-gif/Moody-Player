@@ -59,12 +59,13 @@ export default function FacialExpression({ setSongs }) {
     const mappedMood = moodMapping[_expression] || 'calm';
     console.log(`Detected: ${_expression}, Mapped to: ${mappedMood}`);
 
-    axios.get(`http://localhost:3000/songs?mood=${mappedMood}`)
-      .then(res => {
-        console.log(res.data);
-        setSongs(res.data.songs);
-      })
-      .catch(err => console.error("Error fetching songs:", err));
+axios.get(`${import.meta.env.VITE_BACKEND_URL}/songs?mood=${mappedMood}`)
+  .then(res => {
+    console.log(res.data);
+    setSongs(res.data.songs);
+  })
+  .catch(err => console.error("Error fetching songs:", err));
+
   }
 
   useEffect(() => {
