@@ -8,7 +8,6 @@
 // src/App.jsx
 import FacialExpression from "./components/FacialExpression";
 import MoodSongs from "./components/MoodSongs";
-import './App.css';
 import { useState } from "react";
 
 function App() {
