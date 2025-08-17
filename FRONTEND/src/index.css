@@ -1,0 +1,162 @@
+
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+
+
+
+.app-heading {
+  margin-top: 0.5rem;     /* smaller top margin */
+  margin-bottom: 10px
+}
+
+
+
+:root {
+  font-family: 'Segoe UI', Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #f3f4f6;
+  background-color: #1e1e2f;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #b2b3d6;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: #4f46e5;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #1e1e2f;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+button {
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #2a2a3c;
+  color: #f3f4f6;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.2s;
+}
+
+/* button:hover {
+  border-color: #6366f1;
+  margin-bottom: 10px;
+  transform: translateY(-1px);
+} */
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #212121;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #212121;
+  }
+}
+
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  padding: 2rem;
+  flex-wrap: wrap; /* ensures responsiveness on small screens */
+  height: 100%;
+  min-height: 100vh;  /* instead of fixed 100vh */
+}
+
+
+
+.left-panel {
+  flex: 1 1 450px; /* grows, shrinks, base 450px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.right-panel {
+  flex: 1 1 400px; /* base width 400px */
+  margin-top: 20px;
+  margin-left: 50px;
+  justify-content: flex-start;
+}
+
+
+.app-heading {
+  text-align: center;
+  font-size: 2.5rem;       /* slightly smaller than global h1 */
+  font-weight: 600;
+  color: #c7c8ff;
+  margin-top: 50px;   /* space above panels */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.app-heading span{
+  font-size: 25px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+
+/* Optional: adjust video size for smaller screens */
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-panel, .right-panel {
+    flex: 1 1 100%;
+  }
+
+  .user-video {
+    width: 90%;
+    height: auto;
+  }
+}
