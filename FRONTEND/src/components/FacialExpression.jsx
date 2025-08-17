@@ -62,11 +62,18 @@ export default function FacialExpression({ setSongs }) {
 axios.get(`${import.meta.env.VITE_BACKEND_URL}/songs?mood=${mappedMood}`)
   .then(res => {
     console.log(res.data);
-    setSongs(res.data.songs);
+    if (res.data.songs.length === 0) {
+      alert("No songs found for this mood!");
+      setSongs([]); // clear songs
+    } else {
+      setSongs(res.data.songs);
+    }
   })
   .catch(err => console.error("Error fetching songs:", err));
 
+
   }
+
 
   useEffect(() => {
     loadModels().then(startVideo);

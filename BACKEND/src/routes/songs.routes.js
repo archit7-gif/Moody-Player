@@ -35,11 +35,20 @@ song : song
 }) 
 
 
-router.get('/songs',async(req,res)=>{
-const {mood} = req.query
-const songs = await songModel.find({
-mood : mood
-})
+router.get('/songs', async (req, res) => {
+  const { mood } = req.query;
+
+  try {
+    // Case-insensitive match for mood
+    const songs = await songModel.find({
+      mood: { $regex: new RegExp(`^${mood.trim()}$`, 'i') }
+    });
+
+    res.json({ message: "Songs fetched Sucessfullly", songs });
+  } catch (err) {
+    console.error("Error fetching songs:", err);
+    res.status(500).json({ message: "Error fetching songs" });
+  }
 
 res.status(200).json({
 message : "Songs fetched Sucessfullly",
