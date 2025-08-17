@@ -106,3 +106,9 @@ axios.get(`${import.meta.env.VITE_BACKEND_URL}/songs?mood=${mappedMood}`)
     </div>
   );
 }
+
+
+// .en
+
+
+
