@@ -1,29 +1,5 @@
 
 
-/* .user-video {
-    width: 450px;
-    height: 270px;
-    aspect-ratio: 16 / 9;
-    border-radius: 2rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
-    border: 3px solid #57566d; 
-    margin-left: 50px;
-    margin-top: 50px;
-
-}
-
-.button{
-background-color: #57566d;
-margin-top: 20px;
-margin-left: 60px;
-
-}
-
-.button:hover{background-color:#25252c } */
-
-
-
 .user-video {
   width: 480px;
   height: 270px;
